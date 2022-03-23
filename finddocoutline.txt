@@ -1,0 +1,82 @@
+Find a Doctor (Due 4/1/22)
+
+Models:
+
+DBEntity
+>Patient
+>Doctor
+>Insurance
+
+PatientAccount
+	>Username 
+	>Password
+	>Ref ID 
+
+ContactInfo
+	>Ref ID to patient 
+	>Name (F,L)
+	>Email
+	>Phone
+	>Address (City, State)
+
+	
+Insurance
+	>Ref ID
+	>Insurance Name
+	>Expiration Date
+
+Doctor
+	>Name
+	>Practice
+	>Accepted Insurance
+
+Views:
+Login
+	>Login Fields
+	
+		> JS Validation
+			>Contact DB to verify login
+	>Recover password
+		>email feature ?
+Sign Up
+	>Sign Up Fields	
+		> JS validation
+			>Contact DB to register
+			
+Search Doctors
+	>Search field based on general practice
+	>Search field based on location
+	
+Book Doctor
+	>Date 
+	>Patient Insurance
+	>Condition
+	>Patient Info
+	
+Navigation
+	1. Landing Page
+		>Login/SignUp
+		
+	2. Search Doctors
+		
+	3. Book Doctor
+
+
+<Not Strict>
+Front-end
+	Tay - 
+	Joel - 
+	
+	
+Back-End
+	Anthony 
+	Amad
+	
+	need service that front end can use 
+	
+
+DAOs
+	-login -sign up
+	
+	-booking -search
+	
