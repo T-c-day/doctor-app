@@ -1,0 +1,34 @@
+<p>patient-create works!</p>
+
+<body>
+    <!--Form for creating a patient-->
+    <form novalidate [formGroup]="patientForm" (ngSubmit)="displayPatientInfo()">
+        <fieldset>
+    <div class="form-group">
+        <input type="number" class="form-control" formControlName="patientId" value="-1" [hidden]="allowId == false" >
+        <label>Patient Name </label>
+        <input type="text" class="form-control" formControlName="patientName">
+
+        <label>Patient username </label>
+        <input type="text" class="form-control" formControlName="username">
+
+        <label>Patient password </label>
+        <input type="password" class="form-control" formControlName="password">
+
+        <label>Patient email </label>
+        <input type="text" class="form-control" formControlName="email">
+
+        <label>Patient phone </label>
+        <input type="text" class="form-control" formControlName="phoneNumber">
+
+        <label>Patient address </label>
+        <input type="text" class="form-control" formControlName="address">
+    </div>
+    <input type="submit"  class="btn btn-success">
+    </fieldset>
+</form>
+
+    <app-patient-list></app-patient-list>
+    <app-patient-login></app-patient-login>
+
+</body>

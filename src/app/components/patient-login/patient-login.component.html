@@ -1,0 +1,18 @@
+<p>patient-login works!</p>
+
+<body>
+    <form novalidate [formGroup]="loginForm" (ngSubmit)="login()">
+        <fieldset>
+        <label>Patient username </label>
+        <input type="text" class="form-control" formControlName="username">
+
+        <label>Patient password </label>
+        <input type="password" class="form-control" formControlName="password">
+        <input type="submit"  class="btn btn-success" value="Login!">
+        </fieldset>
+    </form>
+
+    <div *ngIf="patient != null">
+        <h1>{{patient.username + " is logged in!"}}</h1>
+    </div>
+</body>
