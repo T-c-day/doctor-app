@@ -19,7 +19,7 @@ export class PatientListComponent implements OnInit
 
   ngOnInit(): void 
   {
-    this.patientService.getPatient(3).subscribe( data => {console.log("Patient returned" + data);});
+    //this.patientService.getPatient(3).subscribe( data => {console.log("Patient returned" + data);});
     this.refreshPatients();
   }
 
