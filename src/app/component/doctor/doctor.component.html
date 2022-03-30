@@ -1,0 +1,28 @@
+<head></head>
+<body>
+<section>
+    <div>
+<table class="table table-light">
+    <thead>
+      <tr>
+        <th scope="col">Doctor ID</th>
+        <th scope="col">Doctor Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Email</th>
+        <th scope="col">Speciality</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= "let d of doctors">
+          <td>{{d.doctorId}}</td>
+          <td>{{d.doctorName}}</td>
+          <td>{{d.phoneNumber}}</td>
+          <td>{{d.email}}</td>
+          <td>{{d.SpecialityType}}</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+</section>
+
+</body>

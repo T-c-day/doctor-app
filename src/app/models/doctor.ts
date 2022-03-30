@@ -1,9 +1,11 @@
 export class Doctor {
 
     doctorId   !: number;
-    name !: string;
-    insurance    !: string;
+    doctorName !: string;
     phoneNumber !: string;
-    address     !: string;
-    type !:string;
+    email     !: string;
+
+
+    //might need to change this
+    SpecialityType !: string;
 }

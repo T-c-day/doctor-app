@@ -3,12 +3,17 @@ import { Doctor } from './../models/doctor';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 
-const doctorURL = "http://localhost:6060/doctor"
+const doctorURL = "http://localhost:6060/doctors"
 
 @Injectable({
   providedIn: 'root'
 })
 export class DoctorService {
+  httpOptions = {
+    headers : new HttpHeaders({
+      'Content-Type':'application/json'
+    })
+  }
 
   constructor(public httpClient:HttpClient) { }
 
@@ -20,8 +25,7 @@ export class DoctorService {
         );
   }
 
-  //Getting a single patient
-  //"http://localhost:6060/patient/99
+  //Getting a single doctor
   getDoctor(doctorId: number): Observable<Doctor> {
     return this.httpClient.get<Doctor>(`${doctorURL}/${doctorId}`)
     .pipe(
