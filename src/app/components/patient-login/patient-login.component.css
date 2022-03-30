@@ -1,0 +1,59 @@
+body {
+    background: #FFFFFF;
+    font-family: Assistant, sans-serif;
+    display: flex;
+    min-height: 90vh;
+}
+
+.login {
+    color: white;
+    background: #136a8a;
+    background: linear-gradient(to right, #009FFF, #ec2F4B);
+    background: linear-gradient(to right, #009FFF, #ec2F4B);
+    margin: auto;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2), 0px 10px 20px
+        rgba(0, 0, 0, 0.3), 0px 30px 60px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    padding: 50px;
+}
+
+.login input[type=text].username {
+    border: none;
+    background: none;
+    box-shadow: 0px 2px 0px 0px white;
+    width: 100%;
+    color: white;
+    font-size: 1em;
+    outline: none;
+}
+
+.login .username::placeholder {
+    color: #5c5c5c;
+}
+
+.login input[type=password].password {
+    border: none;
+    background: none;
+    box-shadow: 0px 2px 0px 0px white;
+    width: 100%;
+    color: white;
+    font-size: 1em;
+    outline: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.login .password::placeholder {
+    color: #5c5c5c;
+}
+
+.login .login {
+    background: none;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0px 0px 0px 2px white;
+    border-radius: 3px;
+    padding: 5px 2em;
+    transition: 0.5s;
+    font-size: 1em;
+}
