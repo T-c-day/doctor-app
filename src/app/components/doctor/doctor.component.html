@@ -1,0 +1,41 @@
+<head></head>
+<body>
+<section>
+    <div>
+<table  class="table table-light my-3">
+
+    <thead>
+      <tr>
+        <th scope="col">Doctor ID</th>
+        <th scope="col">Doctor Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Email</th>
+        <th scope="col">Speciality</th>
+        <th scope="col">Book</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="doctors.length > 0">
+      <tr *ngFor="let d of doctors">
+          <td>{{d.doctorId}}</td>
+          <td>{{d.doctorName}}</td>
+          <td>{{d.phoneNumber}}</td>
+          <td>{{d.email}}</td>
+          <td>{{d.specialty}}</td>
+          <td><input type="button" value="Book"></td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="doctors.length == 0">
+      <td>No Results</td>
+    </tbody>
+</table>
+</div>
+
+ <!--{{searchSpec}} {{searchPro}} {{displayFlag}}
+<div >
+    <input type="button" (click)="displayBySearch(searchSpec, searchPro)" value="Update"> 
+  </div>-->
+
+</section>
+
+</body>
+
