@@ -1,0 +1,49 @@
+<!--Doctor Search Form-->
+<section class="bg-primary text-light p-5">
+    <div class="container">
+        <div class="d-grid col-6 mx-auto">
+        <button class="btn btn-outline-dark btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#search">Find Care</button> 
+    </div>
+</div>
+</section>
+<!-- Modal -->
+<div class="modal fade" id="search" tabindex="-1" aria-labelledby="searchLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="searchLabel">Book</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="d-md-flex justify-content-between align-items-center">
+            <form action="#" method="post">
+
+                <div class="form-floating mb-2">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example" (change)="changeSelectedSpec($event)">
+                      <option *ngFor="let s of specialtyoptions" value="{{s.name}}">{{s.name}}</option>
+                    </select>
+                    <label for="floatingSelect">Select</label>
+                  </div>
+
+                  <div class="form-floating mb-2">
+                    <select class="form-select" id="floatingSelect2" aria-label="Floating label select example" (change)="changeSelectedPro($event)">
+                      <option *ngFor="let o of insuranceoptions">{{o.name}}</option>
+                    </select>
+                    <label for="floatingSelect2">Select</label>
+                  </div>
+
+                      <div class="form-floating mb-2"> 
+                          <input type="date" class="date" >
+                      </div> 
+                      <app-doctor></app-doctor>  
+           </form>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" (click)="submitSearchCriteria()" data-bs-dismiss="modal">Search</button> <!-- here -->
+        </div>
+
+      </div>
+    </div>
+  </div>
