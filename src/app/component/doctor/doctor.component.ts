@@ -1,4 +1,4 @@
-import { DoctorService } from './../../service/doctor.service';
+import { DoctorService } from '../../services/doctor.service';
 import { Component, OnInit } from '@angular/core';
 import { Doctor } from 'src/app/models/doctor';
 import { Router } from '@angular/router';
