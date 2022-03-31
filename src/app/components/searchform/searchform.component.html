@@ -20,10 +20,14 @@
 
 <div class="search-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    <button type="submit" class="btn btn-primary" (click)="submitSearchCriteria()" data-bs-dismiss="modal">Search</button> <!-- here -->
-  </div>
+</div>
 
-  <app-searchresults></app-searchresults>
+<div class="search-footer">
+  <button type="submit" class="btn btn-secondary" (click)="submitSearchCriteria()" data-bs-dismiss="modal">Search</button>
+</div>
+
+<app-doctor [searchSpec]="temp[0]" [searchPro]="temp[1]"></app-doctor>
+
 </section>
 
 
