@@ -1,38 +1,139 @@
-<head></head>
-<body>
 <section>
-    <div>
-<table  class="table table-light my-3">
+  <div>
+    <!--*ngIf="doctors"-->
+    <table class="table table-light table-hover">
 
-    <thead>
-      <tr>
-        <th scope="col">Doctor ID</th>
-        <th scope="col">Doctor Name</th>
-        <th scope="col">Phone Number</th>
-        <th scope="col">Email</th>
-        <th scope="col">Speciality</th>
-        <th scope="col">Book</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let d of doctors">
+      <thead>
+        <tr>
+          <th scope="col">Doctor ID</th>
+          <th scope="col">Doctor Name</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Email</th>
+          <th scope="col">Speciality</th>
+          <th scope="col">Book</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of doctors">
           <td>{{d.doctorId}}</td>
           <td>{{d.doctorName}}</td>
           <td>{{d.phoneNumber}}</td>
           <td>{{d.email}}</td>
           <td>{{d.specialty}}</td>
-          <td><input type="button" value="Book"></td>
-
-      </tr>
-    </tbody>
-</table>
-</div>
-
- <!--{{searchSpec}} {{searchPro}} {{displayFlag}}-->
-<div >
-    <input type="button" (click)="displayBySearch(searchSpec, searchPro)" value="Update"> 
+          <td><button type="button" class="btn btn-outline-dark btn-warning btn-sm" data-bs-toggle="modal"
+              data-bs-target="#booking">Schedule</button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
+  <!-- <form>
+
+    <div class="form-floating mb-2">
+      <input type="text" class="text" placeholder="symptoms">
+    </div>
+
+    <div class="form-floating mb-2">
+      <input type="text" class="text" placeholder="description of what is going on">
+    </div>
+
+    <div class="form-floating mb-2">
+      <input type="date" class="date" title="date">
+    </div>
+
+  </form> -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="booking" tabindex="-1" aria-labelledby="bookingLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-dark" id="searchLabel">Inquiry Form</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-md-flex justify-content-between align-items-center">
+          <form>
+
+            <div class="form-floating mb-2">
+              <input type="text" class="text" placeholder="symptoms">
+            </div>
+
+            <div class="form-floating mb-2">
+              <input type="text" class="text" placeholder="description of what is going on">
+            </div>
+
+            <div class="form-floating mb-2">
+              <input type="date" class="date">
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Schedule</button>
+      </div>
+
+    </div>
+  </div>
+
+<!--   <section class="bg-primary text-light p-5">
+    <div class="container">
+        <div class="d-grid col-6 mx-auto">
+        <button class="btn btn-outline-dark btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#search">Find Care</button> 
+    </div>
+</div>
 </section>
 
-</body>
+  <div class="modal fade" id="search" tabindex="-1" aria-labelledby="searchLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="searchLabel">Book</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="d-md-flex justify-content-between align-items-center">
+            <form action="#" method="post">
+
+                <div class="form-floating mb-2">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                      <option selected>Doctor Specialty</option>
+                      <option value="pcp">Primary Care Physician</option>
+                      <option value="eyeDoctor">Eye Doctor</option>
+                      <option value="dentist">Dentist</option>
+                      <option value="psych">Psychiatrist</option>
+                      <option value="derma">Dermatologist</option>
+                    </select>
+                    <label for="floatingSelect">Select</label>
+                  </div>
+
+                  <div class="form-floating mb-2">
+                    <select class="form-select" id="floatingSelect2" aria-label="Floating label select example">
+                      <option selected>Insurance</option>
+                      <option value="aetna">Aetna</option>
+                      <option value="anthem">Anthem Blue Cross Blue Shield</option>
+                      <option value="cigna">Cigna</option>
+                      <option value="tricare">Tricare</option>
+                      <option value="united">UnitedHealthCare</option>
+                    </select>
+                    <label for="floatingSelect2">Select</label>
+                  </div>
+
+                      <div class="form-floating mb-2"> 
+                          <input type="date" class="date">
+                      </div>   
+            </form>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->

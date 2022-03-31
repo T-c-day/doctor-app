@@ -4,6 +4,7 @@ import { Doctor } from 'src/app/models/doctor';
 import { Router } from '@angular/router';
 import { SearchParametersService } from 'src/app/services/search-parameters.service';
 
+
 @Component({
   selector: 'app-doctor',
   templateUrl: './doctor.component.html',
@@ -22,6 +23,8 @@ export class DoctorComponent implements OnInit {
 
   displayFlag!:boolean;
 
+  
+
   constructor(public DoctorService: DoctorService, public searchService:SearchParametersService, public router: Router ) {
     // this.searchSpec = searchService.getSearchSpecialty();
     // this.searchPro = searchService.getSearchProvider();
@@ -36,7 +39,7 @@ export class DoctorComponent implements OnInit {
     //     this.searchPro = data;})
 
     //this.displayDoctorInfo();
-    this.searchPro = "Anthem Blue Cross Blue Shield";
+    //this.searchPro = "Anthem Blue Cross Blue Shield";
     this.displayBySearch(this.searchSpec, this.searchPro); // this.searchSpec
   }
 
@@ -56,6 +59,8 @@ export class DoctorComponent implements OnInit {
       this.doctors = data;
     }, err => this.errorMessage = err)
   }
-
+ngOnChanges(){
+  this.displayBySearch(this.searchSpec, this.searchPro);
+}
 
 }

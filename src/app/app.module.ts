@@ -30,13 +30,14 @@ import { PatientHandlerService } from './services/patient-handler.service';
     SearchresultsComponent,
     ShowcaseComponent,
     SignupComponent,
-    SpotlightComponent
+    SpotlightComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [DoctorService, PatientHandlerService],

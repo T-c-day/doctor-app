@@ -1,7 +1,7 @@
 export class Patient 
 {
     patientId   !: number;
-    name !: string;
+    patientName !: string;
     username    !: string;
     password    !: string;
     email       !: string;
