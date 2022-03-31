@@ -3,6 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Patient } from 'src/app/models/patient';
 import { PatientHandlerService } from 'src/app/services/patient-handler.service';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e004fd8d5bb7d1d4f8b510e13035c68c053c90b8
 @Component({
   selector: 'app-patient-login',
   templateUrl: './patient-login.component.html',
@@ -38,4 +42,8 @@ export class PatientLoginComponent implements OnInit
                     }, err => this.errorMessage = err)
 
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e004fd8d5bb7d1d4f8b510e13035c68c053c90b8

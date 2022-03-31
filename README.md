@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # P2AngularTester
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
@@ -5,6 +6,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+=======
+# HelloDoc
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+>>>>>>> e004fd8d5bb7d1d4f8b510e13035c68c053c90b8
 
 ## Code scaffolding
 

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "p2-angular-tester": {
+    "helloDoc": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/p2-angular-tester",
+            "outputPath": "dist/hello-doc",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "p2-angular-tester:build:production"
+              "browserTarget": "helloDoc:build:production"
             },
             "development": {
-              "browserTarget": "p2-angular-tester:build:development"
+              "browserTarget": "helloDoc:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "p2-angular-tester:build"
+            "browserTarget": "helloDoc:build"
           }
         },
         "test": {
@@ -102,5 +102,5 @@
       }
     }
   },
-  "defaultProject": "p2-angular-tester"
+  "defaultProject": "helloDoc"
 }

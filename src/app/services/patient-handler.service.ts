@@ -17,7 +17,10 @@ export class PatientHandlerService
     })
   }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e004fd8d5bb7d1d4f8b510e13035c68c053c90b8
   constructor(public httpClient:HttpClient) { }
 
   getPatients():Observable<Patient[]>{
@@ -28,8 +31,11 @@ export class PatientHandlerService
         );
   }
 
+<<<<<<< HEAD
   //Getting a single patient
   //"http://localhost:6060/patient/99
+=======
+>>>>>>> e004fd8d5bb7d1d4f8b510e13035c68c053c90b8
   getPatient(patientId: number): Observable<Patient> {
     return this.httpClient.get<Patient>(`${patientURL}/${patientId}`)
     .pipe(
@@ -38,8 +44,11 @@ export class PatientHandlerService
     );
   }
 
+<<<<<<< HEAD
   //saving a single product
   //"http://localhost:3000/product
+=======
+>>>>>>> e004fd8d5bb7d1d4f8b510e13035c68c053c90b8
   savePatient(patient:Patient): Observable<Patient> {
     return this.httpClient.post<Patient>(patientURL,patient,this.httpOptions)
     .pipe(

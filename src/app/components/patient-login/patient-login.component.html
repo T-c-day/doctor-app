@@ -1,20 +1,12 @@
-<h1>patient-login works!</h1>
-
-<body>
-    <section class="login" id="login">
+<section class="login" id="login">
     <form class="form-style" novalidate [formGroup]="loginForm" (ngSubmit)="login()">
         <fieldset>
-        <label>Patient username </label>
-        <input name="username" type="text" class="form-control username" formControlName="username">
+        <label>Username </label>
+        <input name="username" type="text" class="form-control username" formControlName="username" title="username">
 
-        <label>Patient password </label>
-        <input name="password" type="password" class="form-control password" formControlName="password">
+        <label>Password </label>
+        <input name="password" type="password" class="form-control password" formControlName="password" title="password">
         <input type="submit"  class="btn btn-success login" value="Login!">
         </fieldset>
     </form>
-
-    <div *ngIf="patient != null">
-        <h1>{{patient.username + " is logged in!"}}</h1>
-    </div>
-    </section>
-</body>
+</section>
