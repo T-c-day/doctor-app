@@ -1,0 +1,30 @@
+<!--Doctor Search Form-->
+<section class="bg-primary text-light p-5">
+
+<form action="#" method="post">
+
+    <div class="form-floating mb-2">
+        <select class="form-select" id="floatingSelect" aria-label="Floating label select example" (change)="changeSelectedSpec($event)">
+          <option *ngFor="let s of specialtyoptions" value="{{s.name}}">{{s.name}}</option>
+        </select>
+        <label for="floatingSelect">Select</label>
+      </div>
+
+      <div class="form-floating mb-2">
+        <select class="form-select" id="floatingSelect2" aria-label="Floating label select example" (change)="changeSelectedPro($event)">
+          <option *ngFor="let o of insuranceoptions">{{o.name}}</option>
+        </select>
+        <label for="floatingSelect2">Select</label>
+      </div>  
+</form>
+
+<div class="search-footer col-2 mx-auto d-grid mb-3">
+    
+    <button type="submit" class="btn btn-outline-dark btn-light btn-lg" (click)="submitSearchCriteria()" data-bs-dismiss="modal">Search</button>
+  </div>
+
+ <app-doctor [searchSpec]="temp[0]" [searchPro]="temp[1]"></app-doctor>
+
+</section>
+
+
