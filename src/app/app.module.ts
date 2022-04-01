@@ -17,6 +17,7 @@ import { SpotlightComponent } from './components/spotlight/spotlight.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DoctorService } from './services/doctor.service';
 import { PatientHandlerService } from './services/patient-handler.service';
+import { AppointmentComponent } from './components/appointment/appointment.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { PatientHandlerService } from './services/patient-handler.service';
     ShowcaseComponent,
     SignupComponent,
     SpotlightComponent,
+    AppointmentComponent,
 
   ],
   imports: [

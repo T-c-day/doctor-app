@@ -13,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let d of doctors">
+        <tr *ngFor="let d of doctors;let i=index">
           <td>{{d.doctorId}}</td>
           <td>{{d.doctorName}}</td>
           <td>{{d.phoneNumber}}</td>
@@ -59,7 +59,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Schedule</button>
+        <button type="submit" class="btn btn-primary" (click)="display()">Schedule </button>
       </div>
 
     </div>

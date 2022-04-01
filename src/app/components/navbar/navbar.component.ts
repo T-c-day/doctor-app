@@ -1,5 +1,7 @@
-import { AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Patient } from 'src/app/models/patient';
+import { AppointmentsService } from 'src/app/services/appointments.service';
+import { PatientHandlerService } from 'src/app/services/patient-handler.service';
 import { PatientLoginComponent } from '../patient-login/patient-login.component';
 
 @Component({
@@ -9,13 +11,15 @@ import { PatientLoginComponent } from '../patient-login/patient-login.component'
 })
 export class NavbarComponent implements OnInit, AfterViewInit {
   curPatient!:Patient;
-  constructor() { }
+  constructor(public patientData: PatientHandlerService) { }
 
 
   @Output() messageEvent = new EventEmitter<Patient>();
+  //@Input() currentPatient !: Patient
 
   toggleRes:boolean = false;
   toggleLogin:boolean = false;
+  patientNum !: number;
 
   ngOnInit(): void {
   }
@@ -35,7 +39,9 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   {
     this.curPatient = $event;
     this.toggleRes = !this.toggleRes;
-    console.log("CurPatient: " + this.curPatient.username + " 2");
+    //console.log("CurPatient: " + this.curPatient.username + " 2");
+    //console.log(this.curPatient)
+    this.patientNum = this.curPatient.patientId;
   }
 
   toggleLoginField()

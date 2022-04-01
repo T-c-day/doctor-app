@@ -3,6 +3,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Doctor } from 'src/app/models/doctor';
 import { Router } from '@angular/router';
 import { SearchParametersService } from 'src/app/services/search-parameters.service';
+import { Patient } from 'src/app/models/patient';
+import { PatientHandlerService } from 'src/app/services/patient-handler.service';
+import { Appointment } from 'src/app/models/appointment';
+import { AppointmentsService } from 'src/app/services/appointments.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-doctor',
@@ -16,13 +21,19 @@ export class DoctorComponent implements OnInit {
 
   @Input() searchSpec!:string;
   @Input() searchPro!:string;
+  @Input() patientId!:number;
 
-
+  //appt !: Appointment
+  apptForm !: FormGroup
+  successMessage! : string
+  selectedIndex !: number
+  selectedDoctor !: Doctor
+  appointment:Appointment = new Appointment();
   //@Input() searchParam:string[] = [];
 
   displayFlag!:boolean;
 
-  constructor(public DoctorService: DoctorService, public searchService:SearchParametersService, public router: Router ) {
+  constructor(public DoctorService: DoctorService, public searchService:SearchParametersService, public router: Router, public patientData: PatientHandlerService, public apptData:AppointmentsService) {
   
    }
 
@@ -52,5 +63,18 @@ export class DoctorComponent implements OnInit {
   {
     this.displayBySearch(this.searchSpec, this.searchPro);
   }
+
+   display(){
+
+    this.patientData.getPatient(1).subscribe(data => {this.appointment.patient = data;console.log(data)}, err => this.errorMessage = err  );
+    this.appointment.doctor=this.selectedDoctor;
+    console.log(this.selectedDoctor)
+    this.apptData.saveAppt(this.appointment);
+    console.log(this.appointment.patient)
+   }
+
+   setIndex(i:number){
+    this.selectedDoctor = this.doctors[this.selectedIndex];
+   }
 
 }
