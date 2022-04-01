@@ -1,1 +1,38 @@
-<p>signup works!</p>
+
+<section class="signup" id="signup">
+    <form novalidate [formGroup]="patientForm" (ngSubmit)="signup()">
+    <fieldset>
+        <div class="form-control">
+        <label>Name</label>
+        <input type="text" class="form-control" formControlName="name" title="name">
+        </div>
+
+        <div class="form-control">
+            <label>Username</label>
+        <input type="text" class="form-control" formControlName="username" title="username">
+        </div>      
+
+        <div class="form-control">
+            <label>Password </label>
+        <input type="password" class="form-control" formControlName="password" title="password">
+        </div>   
+
+        <div class="form-control">
+            <label>Email</label>
+        <input type="text" class="form-control" formControlName="email" title="email">
+        </div>
+
+        <div class="form-control">
+            <label>Phone Number</label>
+        <input type="text" class="form-control" formControlName="phoneNumber" title="phoneNumber">
+        </div>
+
+        <div class="form-control">
+            <label>Address</label>
+        <input type="text" class="form-control" formControlName="address" title="address">
+        </div>
+        
+        <input type="submit"  class="btn btn-success login" >
+        </fieldset>
+    </form>
+</section>

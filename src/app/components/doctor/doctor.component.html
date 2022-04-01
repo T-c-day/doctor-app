@@ -24,7 +24,7 @@
         </tr>
       </tbody>
     </table>
-    <div *ngIf="doctors.length == 0">
+    <div *ngIf="doctors.length == 0 && !onHome">
       <h2 class="bg-primary">No Results</h2>
     </div>
   </div>
@@ -50,7 +50,7 @@
             </div>
 
             <div class="form-floating mb-2">
-              <input type="date" class="date">
+              <input type="date" class="date" min="currentDate">
             </div>
 
           </form>

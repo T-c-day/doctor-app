@@ -22,6 +22,8 @@ export class DoctorComponent implements OnInit {
   @Input() searchParam:string[] = [];
 
   displayFlag!:boolean;
+  onHome: boolean  = false;
+  currentDate: Date = new Date('2022-04-01');
 
   
 
@@ -52,6 +54,7 @@ export class DoctorComponent implements OnInit {
 
   displayBySearch(spec:string, pro:string)
   {
+    this.onHome=true;
     console.log("Specialty: " + spec);
     console.log("Provider: " + pro);
     this.DoctorService.getDoctorsBySpecialty(spec, pro).subscribe((data) =>

@@ -51,6 +51,7 @@ export class SearchformComponent implements OnInit {
 
   submitSearchCriteria()
   {
+
     console.log("Sending: " + this.selectedSpecialty + " " + this.selectedProvider);
     //this.searchService.doSearchByParameters(this.selectedSpecialty, this.selectedProvider);
     this.sendMesage();

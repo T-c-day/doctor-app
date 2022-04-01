@@ -2,20 +2,21 @@
 <section class="bg-primary text-light p-5">
 
 <form action="#" method="post">
-
-    <div class="form-floating mb-2">
+  <div class="h-100 row justify-content-center">
+    <div class="form-floating mb-2 col-3 col">
         <select class="form-select" id="floatingSelect" aria-label="Floating label select example" (change)="changeSelectedSpec($event)">
           <option *ngFor="let s of specialtyoptions" value="{{s.name}}">{{s.name}}</option>
         </select>
         <label for="floatingSelect">Select</label>
       </div>
 
-      <div class="form-floating mb-2">
+      <div class="form-floating mb-2 col col-3 ">
         <select class="form-select" id="floatingSelect2" aria-label="Floating label select example" (change)="changeSelectedPro($event)">
           <option *ngFor="let o of insuranceoptions">{{o.name}}</option>
         </select>
         <label for="floatingSelect2">Select</label>
-      </div>  
+      </div> 
+      </div> 
 </form>
 
 <div class="search-footer col-2 mx-auto d-grid mb-3">
