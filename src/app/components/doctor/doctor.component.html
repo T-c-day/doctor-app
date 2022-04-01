@@ -1,6 +1,6 @@
 <section>
     <div>
-<table  class="table table-light my-3">
+<table  class="table table-light table-hover" *ngIf="doctors.length > 0">
 
     <thead>
       <tr>
@@ -19,7 +19,8 @@
           <td>{{d.phoneNumber}}</td>
           <td>{{d.email}}</td>
           <td>{{d.specialty}}</td>
-          <td><input type="button" value="Book"></td>
+          <td><button type="button" class="btn btn-outline-dark btn-warning btn-sm" data-bs-toggle="modal"
+            data-bs-target="#booking">Schedule</button></td>
 
       </tr>
     </tbody>
@@ -29,13 +30,9 @@
 </div>
 </div>
 
- <!--{{searchSpec}} {{searchPro}} {{displayFlag}}-->
-<div >
-    <input type="button" (click)="displayBySearch(searchSpec, searchPro)" value="Update"> 
-  </div>
-
-<!-- Modal -->
+ <!-- Modal -->
 <div class="modal fade" id="booking" tabindex="-1" aria-labelledby="bookingLabel" aria-hidden="true">
+  Hello
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -69,4 +66,3 @@
 
     </div>
   </div>
-

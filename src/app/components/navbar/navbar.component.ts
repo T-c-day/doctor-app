@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   toggleSignUp:boolean = false;
 
   ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
+    //throw new Error('Method not implemented.');
   }
 
   ngOnInit(): void {

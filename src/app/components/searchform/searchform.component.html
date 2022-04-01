@@ -18,12 +18,9 @@
       </div>  
 </form>
 
-<div class="search-footer">
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-</div>
-
-<div class="search-footer">
-  <button type="submit" class="btn btn-secondary" (click)="submitSearchCriteria()" data-bs-dismiss="modal">Search</button>
+<div class="search-footer col-2 mx-auto d-grid mb-3">
+    
+  <button type="submit" class="btn btn-outline-dark btn-light btn-lg" (click)="submitSearchCriteria()" data-bs-dismiss="modal">Search</button>
 </div>
 
 <app-doctor [searchSpec]="temp[0]" [searchPro]="temp[1]"></app-doctor>

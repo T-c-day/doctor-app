@@ -26,7 +26,7 @@ export class DoctorComponent implements OnInit {
   }
 
   displayDoctorInfo(){
-    console.log();
+    console.log("called");
     this.DoctorService.getDoctors().subscribe((data:any)=>{
       this.doctors= data;
     }, err => this.errorMessage = err)
