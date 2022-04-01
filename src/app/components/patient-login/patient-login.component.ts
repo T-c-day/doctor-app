@@ -14,12 +14,13 @@ export class PatientLoginComponent implements OnInit
   username:String = "";
   password:String = "";
   errorMessage!:String;
-  toggleLogin:boolean = false;
-  @Output() messageEvent = new EventEmitter<Patient>();
-  loginForm!:FormGroup;
-  toggleRes:boolean = false;
-  toggleSignUp:boolean = false;
 
+  toggleLogin:boolean = false;
+
+  @Output() messageEvent = new EventEmitter<Patient>();
+
+
+  loginForm!:FormGroup;
   constructor(public formBuilder:FormBuilder, public patientService: PatientHandlerService) { }
 
   ngOnInit(): void 
@@ -33,17 +34,16 @@ export class PatientLoginComponent implements OnInit
   login()
   {
     console.log("Attempting to login to: " + this.loginForm.controls['username'].value);
-    console.log("Password: " + this.loginForm.controls['password'].value);
+
     this.patientService.loginPatient(
             this.loginForm.controls['username'].value, 
             this.loginForm.controls['password'].value)
-                  .subscribe((data) => {
-                      this.patient = data;
-                      this.messageEvent.emit(data); //console.log("Data: " + <Patient><unknown>data.username);
+                  .subscribe((data:Patient) => {
+                      this.patient = data; console.log("Data: " + data); 
+                      this.messageEvent.emit(this.patient);
                     }, err => this.errorMessage = err)
-
+                    //console.log("Patient Result: " + this.patient.username);
   }
-
   sendMessage()
   {
     console.log(this.patient);

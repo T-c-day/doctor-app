@@ -17,16 +17,22 @@ export class DoctorComponent implements OnInit {
   @Input() searchSpec!:string;
   @Input() searchPro!:string;
 
+
+  //@Input() searchParam:string[] = [];
+
   displayFlag!:boolean;
 
-  constructor(public DoctorService: DoctorService, public searchService:SearchParametersService, public router: Router ) {}
+  constructor(public DoctorService: DoctorService, public searchService:SearchParametersService, public router: Router ) {
+  
+   }
 
   ngOnInit(): void {
+
     this.displayBySearch(this.searchSpec, this.searchPro); // this.searchSpec
   }
 
   displayDoctorInfo(){
-    console.log("called");
+    console.log();
     this.DoctorService.getDoctors().subscribe((data:any)=>{
       this.doctors= data;
     }, err => this.errorMessage = err)

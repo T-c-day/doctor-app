@@ -1,4 +1,4 @@
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -30,14 +30,14 @@ import { PatientHandlerService } from './services/patient-handler.service';
     SearchresultsComponent,
     ShowcaseComponent,
     SignupComponent,
-    SpotlightComponent
+    SpotlightComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [DoctorService, PatientHandlerService],

@@ -1,38 +1,36 @@
 <section>
-    <div>
-<table  class="table table-light table-hover" *ngIf="doctors.length > 0">
+  <div>
+    <table class="table table-light table-hover" *ngIf="doctors.length > 0">
 
-    <thead>
-      <tr>
-        <th scope="col">Doctor ID</th>
-        <th scope="col">Doctor Name</th>
-        <th scope="col">Phone Number</th>
-        <th scope="col">Email</th>
-        <th scope="col">Speciality</th>
-        <th scope="col">Book</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let d of doctors">
+      <thead>
+        <tr>
+          <th scope="col">Doctor ID</th>
+          <th scope="col">Doctor Name</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Email</th>
+          <th scope="col">Speciality</th>
+          <th scope="col">Book</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of doctors">
           <td>{{d.doctorId}}</td>
           <td>{{d.doctorName}}</td>
           <td>{{d.phoneNumber}}</td>
           <td>{{d.email}}</td>
           <td>{{d.specialty}}</td>
           <td><button type="button" class="btn btn-outline-dark btn-warning btn-sm" data-bs-toggle="modal"
-            data-bs-target="#booking">Schedule</button></td>
+              data-bs-target="#booking">Schedule</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="doctors.length == 0">
+      <h2 class="bg-primary">No Results</h2>
+    </div>
+  </div>
 
-      </tr>
-    </tbody>
-</table>
-<div *ngIf="doctors.length == 0">
-  <h2 class="bg-primary">No Results</h2>
-</div>
-</div>
-
- <!-- Modal -->
+<!-- Modal -->
 <div class="modal fade" id="booking" tabindex="-1" aria-labelledby="bookingLabel" aria-hidden="true">
-  Hello
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">

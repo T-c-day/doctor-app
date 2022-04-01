@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Patient } from 'src/app/models/patient';
+import { PatientLoginComponent } from '../patient-login/patient-login.component';
 
 @Component({
   selector: 'app-navbar',
@@ -7,29 +8,30 @@ import { Patient } from 'src/app/models/patient';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit, AfterViewInit {
-
   curPatient!:Patient;
-
   constructor() { }
+
+
+  @Output() messageEvent = new EventEmitter<Patient>();
 
   toggleRes:boolean = false;
   toggleLogin:boolean = false;
-  toggleSignUp:boolean = false;
-
-  ngAfterViewInit(): void {
-    //throw new Error('Method not implemented.');
-  }
 
   ngOnInit(): void {
   }
 
+  ngAfterViewInit()
+  {
+    
+    //this.curPatient = this.child.patient;
+  }
   ngOnChanges()
   {
     //this.curPatient = this.child.patient;
     console.log("CurPatient" + this.curPatient+ " 1");
   }
 
-  recieveMessage($event: Patient)
+  recieveMessage($event:Patient)
   {
     this.curPatient = $event;
     this.toggleRes = !this.toggleRes;
@@ -41,16 +43,10 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     this.toggleLogin = !this.toggleLogin;
   }
 
-  toggleSignUpField(){
-    this.toggleSignUp = !this.toggleSignUp;
-  }
-
   signOut()
   {
     this.toggleLogin = false;
     this.toggleRes = false;
     
   }
-
-
 }
