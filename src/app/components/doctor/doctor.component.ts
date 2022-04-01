@@ -17,26 +17,11 @@ export class DoctorComponent implements OnInit {
   @Input() searchSpec!:string;
   @Input() searchPro!:string;
 
-
-  @Input() searchParam:string[] = [];
-
   displayFlag!:boolean;
 
-  constructor(public DoctorService: DoctorService, public searchService:SearchParametersService, public router: Router ) {
-    // this.searchSpec = searchService.getSearchSpecialty();
-    // this.searchPro = searchService.getSearchProvider();
-    // this.displayFlag = searchService.getDisplayFlag();
-   }
+  constructor(public DoctorService: DoctorService, public searchService:SearchParametersService, public router: Router ) {}
 
   ngOnInit(): void {
-    // this.searchService.specSource.subscribe((data) => {
-    //   this.searchSpec = data; })
-
-    //   this.searchService.proSource.subscribe((data) => {
-    //     this.searchPro = data;})
-
-    //this.displayDoctorInfo();
-    this.searchPro = "Anthem Blue Cross Blue Shield";
     this.displayBySearch(this.searchSpec, this.searchPro); // this.searchSpec
   }
 
@@ -57,5 +42,9 @@ export class DoctorComponent implements OnInit {
     }, err => this.errorMessage = err)
   }
 
+  ngOnChanges()
+  {
+    this.displayBySearch(this.searchSpec, this.searchPro);
+  }
 
 }

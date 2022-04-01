@@ -1,5 +1,3 @@
-<head></head>
-<body>
 <section>
     <div>
 <table  class="table table-light my-3">
@@ -26,6 +24,9 @@
       </tr>
     </tbody>
 </table>
+<div *ngIf="doctors.length == 0">
+  <h2 class="bg-primary">No Results</h2>
+</div>
 </div>
 
  <!--{{searchSpec}} {{searchPro}} {{displayFlag}}-->
@@ -33,6 +34,39 @@
     <input type="button" (click)="displayBySearch(searchSpec, searchPro)" value="Update"> 
   </div>
 
-</section>
+<!-- Modal -->
+<div class="modal fade" id="booking" tabindex="-1" aria-labelledby="bookingLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-dark" id="searchLabel">Inquiry Form</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-md-flex justify-content-between align-items-center">
+          <form>
 
-</body>
+            <div class="form-floating mb-2">
+              <input type="text" class="text" placeholder="symptoms">
+            </div>
+
+            <div class="form-floating mb-2">
+              <input type="text" class="text" placeholder="description of what is going on">
+            </div>
+
+            <div class="form-floating mb-2">
+              <input type="date" class="date">
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Schedule</button>
+      </div>
+
+    </div>
+  </div>
+
