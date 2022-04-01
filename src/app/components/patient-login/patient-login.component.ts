@@ -35,9 +35,9 @@ export class PatientLoginComponent implements OnInit {
     this.patientService.loginPatient(
       this.loginForm.controls['username'].value,
       this.loginForm.controls['password'].value)
-      .subscribe((data) => {
-        this.patient = data;
-        this.messageEvent.emit(this.patient); //console.log("Data: " + <Patient><unknown>data.username);
+      .subscribe((data:Patient) => {
+        this.patient = data; console.log("Data: " + data); 
+        this.messageEvent.emit(this.patient);
       }, err => this.errorMessage = err)
 
     //console.log("Result: " + this.patient.email + " has logged in");

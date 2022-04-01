@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Patient } from 'src/app/models/patient';
+import { PatientHandlerService } from 'src/app/services/patient-handler.service';
 import { PatientLoginComponent } from '../patient-login/patient-login.component';
 
 @Component({
@@ -11,10 +12,15 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   //@ViewChild(PatientLoginComponent) child: any;
   curPatient!:Patient;
-  constructor() { }
+
+  constructor(public patientData: PatientHandlerService) { }
+
+ @Output() messageEvent = new EventEmitter<Patient>();
+  //@Input() currentPatient !: Patient
 
   toggleRes:boolean = false;
   toggleLogin:boolean = false;
+  patientNum !: number;
 
   ngOnInit(): void {
   }

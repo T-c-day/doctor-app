@@ -3,6 +3,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Doctor } from 'src/app/models/doctor';
 import { Router } from '@angular/router';
 import { SearchParametersService } from 'src/app/services/search-parameters.service';
+import { PatientHandlerService } from 'src/app/services/patient-handler.service';
+import { AppointmentsService } from 'src/app/services/appointments.service';
+import { FormGroup } from '@angular/forms';
+import { Appointment } from 'src/app/models/appointment';
 
 
 @Component({
@@ -17,9 +21,16 @@ export class DoctorComponent implements OnInit {
 
   @Input() searchSpec!:string;
   @Input() searchPro!:string;
-
-
   @Input() searchParam:string[] = [];
+
+  @Input() patientId!:number;
+
+  //appt !: Appointment
+  apptForm !: FormGroup
+  successMessage! : string
+  selectedIndex !: number
+  selectedDoctor !: Doctor
+  appointment:Appointment = new Appointment();
 
   displayFlag!:boolean;
   onHome: boolean  = false;
@@ -27,21 +38,12 @@ export class DoctorComponent implements OnInit {
 
   
 
-  constructor(public DoctorService: DoctorService, public searchService:SearchParametersService, public router: Router ) {
-    // this.searchSpec = searchService.getSearchSpecialty();
-    // this.searchPro = searchService.getSearchProvider();
-    // this.displayFlag = searchService.getDisplayFlag();
+  constructor(public DoctorService: DoctorService, public searchService:SearchParametersService, public router: Router, public patientData: PatientHandlerService, public apptData:AppointmentsService) {
+
    }
 
   ngOnInit(): void {
-    // this.searchService.specSource.subscribe((data) => {
-    //   this.searchSpec = data; })
-
-    //   this.searchService.proSource.subscribe((data) => {
-    //     this.searchPro = data;})
-
-    //this.displayDoctorInfo();
-    //this.searchPro = "Anthem Blue Cross Blue Shield";
+  
     this.displayBySearch(this.searchSpec, this.searchPro); // this.searchSpec
   }
 
@@ -62,8 +64,24 @@ export class DoctorComponent implements OnInit {
       this.doctors = data;
     }, err => this.errorMessage = err)
   }
-ngOnChanges(){
-  this.displayBySearch(this.searchSpec, this.searchPro);
-}
+
+  ngOnChanges()
+  {
+    this.displayBySearch(this.searchSpec, this.searchPro);
+  }
+
+   display(){
+
+    this.patientData.getPatient(1).subscribe(data => {this.appointment.patient = data;console.log(data)}, err => this.errorMessage = err  );
+    this.appointment.doctor=this.selectedDoctor;
+    console.log(this.selectedDoctor)
+    this.apptData.saveAppt(this.appointment);
+    console.log(this.appointment.patient)
+   }
+
+   setIndex(i:number){
+    this.selectedDoctor = this.doctors[this.selectedIndex];
+   }
+
 
 }

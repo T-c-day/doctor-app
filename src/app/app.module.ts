@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DoctorService } from './services/doctor.service';
 import { PatientHandlerService } from './services/patient-handler.service';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { AppointmentComponent } from './components/appointment/appointment.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     SignupComponent,
     SpotlightComponent,
     ForgotPasswordComponent,
+    AppointmentComponent,
 
   ],
   imports: [
