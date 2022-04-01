@@ -1,3 +1,4 @@
+
 <section>
   <div>
     <table class="table table-light table-hover" *ngIf="doctors.length > 0">
@@ -42,11 +43,11 @@
           <form>
 
             <div class="form-floating mb-2">
-              <input type="text" class="text" placeholder="symptoms">
+              <input type="text" class="text" placeholder="symptoms" #symptoms>
             </div>
 
             <div class="form-floating mb-2">
-              <input type="text" class="text" placeholder="description of what is going on">
+              <input type="text" class="text" placeholder="description of what is going on" #desc>
             </div>
 
             <div class="form-floating mb-2">
@@ -56,11 +57,14 @@
           </form>
         </div>
       </div>
-
+      
       <div class="modal-footer">
+        
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" (click)="display()">Schedule </button>
+        <button type="submit" class="btn btn-primary" (click)="display(1, symptoms.value, desc.value)">Schedule </button>
+        
       </div>
 
     </div>
+  </div>
   </div>

@@ -23,27 +23,29 @@ export class DoctorComponent implements OnInit {
   @Input() searchPro!:string;
   @Input() patientId!:number;
 
-  //appt !: Appointment
+  appt !: Appointment
   apptForm !: FormGroup
   successMessage! : string
   selectedIndex !: number
   selectedDoctor !: Doctor
-  appointment:Appointment = new Appointment();
-  //@Input() searchParam:string[] = [];
-
+  appointment !: Appointment
+  
   displayFlag!:boolean;
 
+  patients: Patient[] = []
+
   constructor(public DoctorService: DoctorService, public searchService:SearchParametersService, public router: Router, public patientData: PatientHandlerService, public apptData:AppointmentsService) {
-  
+    
    }
 
   ngOnInit(): void {
-
+    console.log("ngOnInit called")
     this.displayBySearch(this.searchSpec, this.searchPro); // this.searchSpec
+    
   }
 
   displayDoctorInfo(){
-    console.log();
+    console.log("displayDoctorInfo called");
     this.DoctorService.getDoctors().subscribe((data:any)=>{
       this.doctors= data;
     }, err => this.errorMessage = err)
@@ -51,8 +53,10 @@ export class DoctorComponent implements OnInit {
 
   displayBySearch(spec:string, pro:string)
   {
+    console.log("displayBySearch called");
     console.log("Specialty: " + spec);
     console.log("Provider: " + pro);
+    //console.log("Here we got "+this.patients)
     this.DoctorService.getDoctorsBySpecialty(spec, pro).subscribe((data) =>
     {
       this.doctors = data;
@@ -61,16 +65,22 @@ export class DoctorComponent implements OnInit {
 
   ngOnChanges()
   {
+    console.log("ngOnChanges called");
     this.displayBySearch(this.searchSpec, this.searchPro);
   }
 
-   display(){
-
-    this.patientData.getPatient(1).subscribe(data => {this.appointment.patient = data;console.log(data)}, err => this.errorMessage = err  );
-    this.appointment.doctor=this.selectedDoctor;
-    console.log(this.selectedDoctor)
-    this.apptData.saveAppt(this.appointment);
-    console.log(this.appointment.patient)
+   display(patientId: number, symptom: string, desc: string){
+    console.log("display called");
+    console.log(this.patientId)
+    this.patientData.getPatient(patientId).subscribe(data => {this.patients[0] = data;console.log("Data is "+data+" which is "+this.patients)}, err => this.errorMessage = err  );
+    //this.appointment.doctor=this.selectedDoctor;
+    //console.log(this.patientData)
+    //this.apptData.saveAppt(this.appointment);
+    
+    this.appointment = new Appointment(symptom,desc,5,patientId);
+    this.apptData.saveAppt(this.appointment).subscribe((data: any) =>{
+      this.successMessage ="Pushed"
+    }, err=> this.errorMessage = err)
    }
 
    setIndex(i:number){

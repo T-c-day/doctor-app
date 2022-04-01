@@ -6,6 +6,13 @@ export class Appointment {
     appointmentDescription!:string;
     notableSymptoms!:string;
     appointmentDate!:Date;
-    doctor!:Doctor;
-    patient!:Patient;
+    doctorId!:Number;
+    patientId!:Number;
+
+    constructor(appointmentDescription:string, notableSymptoms:string, doctorId:Number ,patientId:Number){
+        this.appointmentDescription = appointmentDescription
+        this.notableSymptoms = notableSymptoms
+        this.doctorId = doctorId
+        this.patientId = patientId
+    }
 }

@@ -12,7 +12,7 @@
             <div *ngIf="toggleLogin">
                 <h1 *ngIf="toggleRes" style="color:whitesmoke">{{"Welcome " + curPatient.username + "!"}}</h1>
                 <app-patient-login *ngIf="!toggleRes" (messageEvent)="recieveMessage($event)"></app-patient-login>
-                <app-doctor [patientId]="patientNum"></app-doctor>
+                
              </div>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"> 

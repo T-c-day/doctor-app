@@ -13,13 +13,11 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   curPatient!:Patient;
   constructor(public patientData: PatientHandlerService) { }
 
-
   @Output() messageEvent = new EventEmitter<Patient>();
-  //@Input() currentPatient !: Patient
-
   toggleRes:boolean = false;
   toggleLogin:boolean = false;
   patientNum !: number;
+
 
   ngOnInit(): void {
   }

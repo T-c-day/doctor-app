@@ -14,7 +14,6 @@ export class PatientLoginComponent implements OnInit
   username:String = "";
   password:String = "";
   errorMessage!:String;
-
   toggleLogin:boolean = false;
 
   @Output() messageEvent = new EventEmitter<Patient>();
