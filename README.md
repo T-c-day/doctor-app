@@ -1,6 +1,30 @@
 # HelloDoc
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+## Project Description
+In this project, you are able to search for a doctor by specialty and the type of insurance they accept as well as book an appointment with them. 
+
+## Technologies Used
+
+* SpringBoot
+* Hibernate
+* Angular
+* Log4j
+* JUnit
+
+
+## Features
+
+List of features ready and TODOs for future development
+* Users can : Signup, Login , Logout
+* View Doctors
+* Search Doctors
+* Schedule Appointment
+
+To-do list:
+* Get an email about your appointment
+* WView your pending appointments
+
+# Getting Started
 
 ## Development server
 
@@ -22,6 +46,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Contributors
+Anthony Ardiente ,Taylor Day, Joel Rosas, Amad Martin
+
