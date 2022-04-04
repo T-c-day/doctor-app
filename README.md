@@ -1,6 +1,5 @@
 # HelloDoc
-About :Find A Doctor - Angular/Spring
- 
+About :
 In this document, all rules and requirements on how to proceed about defining and implement the Revature project II requirements are defined.
 For this project, a different approach will be applied. You get to decide as a group, what are you going to work on. However, certain rules and requirements must be met.
 
